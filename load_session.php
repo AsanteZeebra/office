@@ -14,5 +14,5 @@ if (isset($_SESSION['last_activity']) && time() - $_SESSION['last_activity'] > 3
   header("Refresh:10"); //refresh
   header("Location: login.php"); // redirect to login page
  }
- $_SESSION['last_activity'] = time(); // update last activity time stamp
+ $_SESSION['last_activity'] = time();
 ?>
