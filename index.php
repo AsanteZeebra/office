@@ -1,10 +1,10 @@
 <?php
 
-
+include_once('load_session.php');
 
 include_once('connect.php');
 include_once('check_passports.php');
-include_once('load_session.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
