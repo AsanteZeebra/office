@@ -60,7 +60,7 @@ if ($result) {
             // Update the status to 'expired'
             $updateSql = "UPDATE passports SET status = 'expired' WHERE passport_no = ?";
             $stmt = mysqli_prepare($conn, $updateSql);
-            mysqli_stmt_bind_param($stmt, "i", $id);
+            mysqli_stmt_bind_param($stmt, "s", $id);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_close($stmt);
         }
