@@ -38,10 +38,6 @@ if ($result->num_rows > 0) {
     echo "No records found in clients table.";
 }
 
-
-
-
-
 // Select all passports data
 $sql = "SELECT passport_number, issue_date, expiry_date, status FROM passports"; 
 $result = mysqli_query($conn, $sql);
@@ -58,7 +54,7 @@ if ($result) {
             $id = $row['passport_number']; // Assuming there's a unique ID for each passport entry
             
             // Update the status to 'expired'
-            $updateSql = "UPDATE passports SET status = 'expired' WHERE passport_no = ?";
+            $updateSql = "UPDATE passports SET status = 'expired' WHERE passport_number = ?";
             $stmt = mysqli_prepare($conn, $updateSql);
             mysqli_stmt_bind_param($stmt, "s", $id);
             mysqli_stmt_execute($stmt);
